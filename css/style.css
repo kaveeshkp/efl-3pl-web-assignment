@@ -452,3 +452,17 @@ textarea:focus {
         grid-template-columns: 1fr;
     }
 }
+
+.contact-cell a {
+  display: block;
+  color: #0f2740;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-cell small {
+  display: block;
+  margin-top: 2px;
+  color: #5e6b78;
+  font-size: 12px;
+}

@@ -46,7 +46,22 @@ require __DIR__ . '/includes/header.php';
         <td><?php echo number_format((float)$r['price'], 2); ?></td>
         <td><?php echo (int)$r['quantity']; ?></td>
         <td><?php echo htmlspecialchars($r['supplier_name'] ?? 'Unassigned'); ?></td>
-        <td><?php echo htmlspecialchars($r['contact_info'] ?? '—'); ?></td>
+        <td class="contact-cell">
+          <?php
+            $contact = $r['contact_info'] ?? '';
+            $parts = preg_split('/\s*·\s*/', $contact);
+            $email = $parts[0] ?? '';
+            $phone = $parts[1] ?? '';
+          ?>
+          <?php if ($email && $email !== '—'): ?>
+            <a href="mailto:<?php echo htmlspecialchars($email); ?>"><?php echo htmlspecialchars($email); ?></a>
+          <?php else: ?>
+            —
+          <?php endif; ?>
+          <?php if ($phone): ?>
+            <small><?php echo htmlspecialchars($phone); ?></small>
+          <?php endif; ?>
+        </td>
       </tr>
       <?php endforeach; ?>
     </tbody>
