@@ -49,16 +49,28 @@ require __DIR__ . '/includes/header.php';
 ?>
 <section class="login-shell">
   <div class="login-brand">
-    <div class="logo">3PL</div>
+    <span class="mark">3PL</span>
+    <p class="brand-kicker">EFL Global · Internal system</p>
     <h1>EFL 3PL</h1>
-    <h2>Create staff account</h2>
+    <p class="brand-system">Create staff account</p>
+    <p class="brand-lead">Register with your official name and work email before using the warehouse desk.</p>
+    <ul class="brand-list">
+      <li>Unique username and email</li>
+      <li>Password stored securely</li>
+      <li>Sign in after registration</li>
+    </ul>
+    <p class="fine">Use a work email. Do not share this account.</p>
   </div>
-  <form class="login-form" method="post">
+
+  <form class="login-form compact" method="post">
     <p class="kicker">Registration</p>
     <h3>Create an account</h3>
+    <p class="hint">All fields are required.</p>
+
     <?php foreach ($errors as $err): ?>
       <div class="flash err"><?php echo htmlspecialchars($err); ?></div>
     <?php endforeach; ?>
+
     <label>Full name
       <input name="full_name" required value="<?php echo htmlspecialchars($old['full_name']); ?>">
     </label>
@@ -71,8 +83,9 @@ require __DIR__ . '/includes/header.php';
     <label>Password
       <input name="password" type="password" required minlength="6">
     </label>
-    <button class="btn login-submit" type="submit">Register</button>
-    <p>Already registered? <a href="login.php">Sign in</a></p>
+
+    <button class="btn login-submit" type="submit">Create account</button>
+    <p class="form-foot">Already registered? <a href="login.php">Sign in</a></p>
   </form>
 </section>
 <?php require __DIR__ . '/includes/footer.php'; ?>

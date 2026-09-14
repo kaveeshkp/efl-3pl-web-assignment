@@ -36,29 +36,40 @@ $pageTitle = 'Sign in';
 require __DIR__ . '/includes/header.php';
 ?>
 <section class="login-shell">
-  <div class="login-brand">
-    <div class="logo">3PL</div>
+    <div class="login-brand">
+    <span class="mark">3PL</span>
+    <p class="brand-kicker">EFL Global · Internal system</p>
     <h1>EFL 3PL</h1>
-    <h2>Warehouse product desk</h2>
-    <p class="fine">Sign in with your staff account.</p>
+    <p class="brand-system">Warehouse Product Desk</p>
+    <p class="brand-lead">Staff access for inventory, suppliers and product records.</p>
+    <ul class="brand-list">
+      <li>Secure staff sign-in</li>
+      <li>Product create, update and delete</li>
+      <li>Supplier-linked stock view</li>
+    </ul>
+    <p class="fine">Authorized personnel only. Activity is recorded for audit.</p>
   </div>
+
   <form class="login-form" method="post">
-    <p class="kicker">Secure access</p>
+    <p class="kicker">Staff portal</p>
     <h3>Sign in</h3>
+    <p class="hint">Enter your username and password.</p>
+
     <?php if (!empty($_GET['registered'])): ?>
       <div class="flash">Account created. Please sign in.</div>
     <?php endif; ?>
     <?php if ($error): ?>
       <div class="flash err" role="alert"><?php echo htmlspecialchars($error); ?></div>
     <?php endif; ?>
+
     <label>Username
-      <input name="username" required>
+      <input name="username" autocomplete="username" required>
     </label>
     <label>Password
-      <input name="password" type="password" required>
+      <input name="password" type="password" autocomplete="current-password" required>
     </label>
-    <button class="btn login-submit" type="submit">Sign in</button>
-    <p>New user? <a href="register.php">Create an account</a></p>
+    <button class="btn login-submit" type="submit">Continue</button>
+    <p class="form-foot">New staff? <a href="register.php">Request an account</a></p>
   </form>
 </section>
 <?php require __DIR__ . '/includes/footer.php'; ?>
