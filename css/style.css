@@ -1,15 +1,16 @@
 :root {
-    --navy: #0b2e4a;
-    --navy-2: #123a5c;
-    --ink: #1c1916;
-    --muted: #6b655c;
-    --line: #e4ddd2;
-    --paper: #f6f3ed;
-    --white: #fffcf8;
-    --gold: #c4a35a;
-    --ok: #1f4f46;
-    --danger: #8b2e2e;
-    --shadow: 0 10px 30px rgba(11, 46, 74, 0.08);
+    --navy: #0f2740;
+    --navy-2: #163552;
+    --ink: #122033;
+    --muted: #5e6b78;
+    --line: #e6ebf0;
+    --paper: #f3f5f8;
+    --white: #ffffff;
+    --gold: #d4a24c;
+    --ok: #0f6b63;
+    --danger: #b42318;
+    --shadow: 0 8px 24px rgba(15, 39, 64, 0.06);
+    --radius: 12px;
 }
 
 * {
@@ -22,14 +23,14 @@ body {
     display: flex;
     color: var(--ink);
     background: var(--paper);
-    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-family: Inter, "Segoe UI", sans-serif;
     font-size: 15px;
     line-height: 1.45;
 }
 
 .sidebar {
-    width: 240px;
-    min-width: 240px;
+    width: 248px;
+    min-width: 248px;
     background: var(--navy);
     color: #fff;
     display: flex;
@@ -41,27 +42,27 @@ body {
     display: flex;
     gap: 12px;
     align-items: center;
-    padding: 22px 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, .08);
+    padding: 22px 20px 18px;
 }
 
-.logo {
+.logo,
+.mark {
     background: var(--gold);
     color: var(--navy);
     font-weight: 700;
     letter-spacing: .08em;
-    padding: 9px 10px;
+    padding: 8px 10px;
+    border-radius: 8px;
     width: auto;
 }
 
 .brand strong {
     display: block;
-    font-size: 15px;
 }
 
 .brand small {
     display: block;
-    color: #b9c4cc;
+    color: #9db0c2;
     font-size: 12px;
     margin-top: 2px;
 }
@@ -69,16 +70,16 @@ body {
 .sidebar nav {
     display: flex;
     flex-direction: column;
-    padding: 12px 10px;
+    padding: 8px 12px;
     flex: 1;
+    gap: 4px;
 }
 
 .sidebar nav a {
-    color: #dce3e8;
+    color: #d5e0ea;
     text-decoration: none;
     padding: 11px 12px;
-    border-radius: 6px;
-    margin-bottom: 4px;
+    border-radius: 8px;
 }
 
 .sidebar nav a:hover {
@@ -87,20 +88,19 @@ body {
 }
 
 .logout-btn {
-    color: #dce3e8;
+    color: #d5e0ea;
     text-decoration: none;
-    padding: 16px 22px;
+    padding: 16px 20px;
     border-top: 1px solid rgba(255, 255, 255, .08);
 }
 
 .logout-btn:hover {
-    background: #5c1f1f;
-    color: #fff;
+    background: #6b1d1d;
 }
 
 .wrap {
     flex: 1;
-    padding: 28px 32px 40px;
+    padding: 28px 32px 48px;
     min-width: 0;
 }
 
@@ -114,32 +114,34 @@ body {
     justify-content: space-between;
     align-items: flex-end;
     gap: 16px;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
 }
 
 h1,
 .page-head h1,
 .toolbar h1 {
-    margin: 0 0 4px;
-    font-size: 28px;
-    letter-spacing: -.02em;
+    margin: 0;
+    font-size: 30px;
+    letter-spacing: -.03em;
 }
 
 .kicker {
-    margin: 0 0 4px;
+    margin: 0 0 6px;
     font-size: 11px;
-    letter-spacing: .14em;
+    letter-spacing: .16em;
     text-transform: uppercase;
     color: var(--ok);
 }
 
 .muted {
     color: var(--muted);
+    margin: 6px 0 0;
 }
 
 .card {
     background: var(--white);
     border: 1px solid var(--line);
+    border-radius: var(--radius);
     padding: 20px;
     box-shadow: var(--shadow);
 }
@@ -147,28 +149,33 @@ h1,
 .grid {
     width: 100%;
     border-collapse: collapse;
-    background: var(--white);
 }
 
 .grid th {
     text-align: left;
-    font-size: 12px;
-    letter-spacing: .06em;
+    font-size: 11px;
+    letter-spacing: .08em;
     text-transform: uppercase;
     color: var(--muted);
+    padding: 12px;
     border-bottom: 1px solid var(--line);
-    padding: 10px 12px;
-    background: #faf7f2;
+    background: #f8fafc;
 }
 
 .grid td {
-    padding: 12px;
+    padding: 14px 12px;
     border-bottom: 1px solid var(--line);
     vertical-align: middle;
 }
 
-.col-actions {
+.grid tr:last-child td {
+    border-bottom: 0;
+}
+
+th.col-actions,
+td.col-actions {
     text-align: right;
+    width: 170px;
     white-space: nowrap;
 }
 
@@ -177,7 +184,8 @@ h1,
     background: var(--navy);
     color: #fff;
     border: 1px solid var(--navy);
-    padding: 9px 14px;
+    padding: 10px 14px;
+    border-radius: 8px;
     text-decoration: none;
     cursor: pointer;
     font-size: 14px;
@@ -205,26 +213,28 @@ a.btn {
 }
 
 .flash {
-    background: #e7f0ee;
+    background: #e8f6f3;
     color: var(--ok);
     padding: 10px 12px;
+    border-radius: 8px;
     margin-bottom: 12px;
 }
 
 .flash.err {
-    background: #f6e6e6;
+    background: #fde8e6;
     color: var(--danger);
 }
 
 label {
     display: block;
     margin: 0 0 12px;
-    color: #3f3b36;
+    color: #3d4a57;
     font-size: 13px;
 }
 
 .search-label {
-    max-width: 460px;
+    max-width: 420px;
+    margin-bottom: 16px;
 }
 
 input,
@@ -232,29 +242,39 @@ select,
 textarea {
     width: 100%;
     margin-top: 6px;
-    padding: 10px 12px;
-    border: 1px solid #d2cbc0;
+    padding: 11px 12px;
+    border: 1px solid #d5dee6;
+    border-radius: 8px;
     background: #fff;
     font: inherit;
 }
 
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 3px solid rgba(15, 39, 64, .12);
+    border-color: var(--navy);
+}
+
 .stats {
     display: grid;
-    grid-template-columns: repeat(3, minmax(140px, 1fr));
-    gap: 12px;
-    margin: 18px 0 22px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin: 8px 0 20px;
 }
 
 .stat {
     background: var(--white);
     border: 1px solid var(--line);
-    padding: 16px 18px;
+    border-radius: var(--radius);
+    padding: 18px;
     box-shadow: var(--shadow);
 }
 
 .stat b {
     display: block;
-    font-size: 28px;
+    font-size: 30px;
+    letter-spacing: -.03em;
 }
 
 .stat span {
@@ -263,20 +283,25 @@ textarea {
 }
 
 .suggest {
-    max-width: 460px;
+    max-width: 420px;
     background: #fff;
     border: 1px solid var(--line);
+    border-radius: 8px;
     margin: 0 0 14px;
+    overflow: hidden;
 }
 
 .suggest-item {
     display: block;
-    padding: 9px 12px;
+    padding: 10px 12px;
     text-decoration: none;
     color: var(--ink);
 }
 
-/* Login / Register */
+.suggest-item:hover {
+    background: #f3f6f9;
+}
+
 .guest-wrap {
     min-height: 100vh;
     width: 100%;
@@ -284,23 +309,25 @@ textarea {
     align-items: center;
     justify-content: center;
     background:
-        linear-gradient(120deg, rgba(7, 30, 49, 0.55), rgba(11, 46, 74, 0.45)),
+        linear-gradient(120deg, rgba(15, 39, 64, .58), rgba(15, 39, 64, .42)),
         url("../img/login-bg.png") center / cover no-repeat fixed;
 }
 
 .login-shell {
     display: flex;
-    width: 840px;
+    width: 860px;
     max-width: 94%;
-    min-height: 460px;
+    min-height: 480px;
     background: #fff;
-    box-shadow: 0 24px 60px rgba(0, 0, 0, .28);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, .28);
 }
 
 .login-brand {
     width: 300px;
     background: var(--navy);
-    color: #fbf8f2;
+    color: #f7fbff;
     padding: 36px 28px;
     display: flex;
     flex-direction: column;
@@ -311,13 +338,7 @@ textarea {
     display: inline-block !important;
     width: auto !important;
     max-width: max-content;
-    background: var(--gold);
-    color: var(--navy);
-    font-weight: 700;
-    letter-spacing: .12em;
-    font-size: 13px;
-    padding: 8px 12px;
-    margin: 0 0 14px;
+    margin: 0 0 16px;
 }
 
 .login-brand .brand-kicker {
@@ -329,35 +350,30 @@ textarea {
 }
 
 .login-brand h1 {
-    margin: 0 0 6px;
+    margin: 0 0 8px;
     font-size: 26px;
-    line-height: 1.1;
 }
 
 .login-brand .brand-system {
     margin: 0 0 10px;
     color: var(--gold);
-    font-size: 15px;
 }
 
 .login-brand .brand-lead {
-    margin: 0 0 12px;
-    color: #c5d0d8;
+    margin: 0 0 14px;
+    color: #c5d3df;
     font-size: 14px;
-    line-height: 1.55;
 }
 
 .login-brand .brand-list {
     margin: 0 0 16px;
     padding-left: 18px;
-    color: #e8eef2;
-    font-size: 14px;
-    line-height: 1.65;
+    color: #e6eef5;
 }
 
 .login-brand .fine {
     margin-top: auto;
-    color: #9aa8b3;
+    color: #93a6b8;
     font-size: 12px;
 }
 
@@ -368,53 +384,38 @@ textarea {
 
 .login-form h3 {
     margin: 0 0 4px;
-    font-size: 24px;
+    font-size: 26px;
 }
 
 .login-form .hint {
     margin: 0 0 18px;
     color: var(--muted);
-    font-size: 14px;
 }
 
 .login-form label {
-    font-size: 12px;
-    letter-spacing: .04em;
     text-transform: uppercase;
-    color: var(--muted);
-    margin: 0 0 12px;
+    letter-spacing: .04em;
+    font-size: 12px;
 }
 
 .login-form input {
-    margin-top: 5px;
-    margin-bottom: 0;
-    padding: 11px 12px;
-    border: 1px solid #d2cbc0;
-    background: #fff;
+    margin-top: 6px;
 }
 
 .login-form input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 30px #fff inset;
 }
 
-.login-form.compact label {
-    margin: 0 0 10px;
-}
-
-.login-form.compact .hint {
-    margin-bottom: 14px;
-}
-
 .login-submit {
     width: 100%;
     margin-top: 8px;
     padding: 12px;
+    border-radius: 8px;
 }
 
 .form-foot {
     margin: 16px 0 0;
     color: var(--muted);
-    font-size: 14px;
 }
 
 .form-foot a {
@@ -450,18 +451,4 @@ textarea {
     .stats {
         grid-template-columns: 1fr;
     }
-}
-
-th.col-actions,
-td.col-actions {
-  text-align: right;
-  width: 170px;
-  white-space: nowrap;
-  vertical-align: middle;
-}
-
-td.col-actions .btn {
-  display: inline-block;
-  margin: 0 0 0 6px;
-  vertical-align: middle;
 }
