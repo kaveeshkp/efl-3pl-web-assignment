@@ -18,7 +18,6 @@ require __DIR__ . '/includes/header.php';
     <h1>Dashboard</h1>
     <p class="muted">Warehouse product desk · signed in as <?php echo htmlspecialchars($_SESSION['full_name']); ?></p>
   </div>
-  <a class="btn" href="add_product.php">Add product</a>
 </div>
 
 <section class="stats">
