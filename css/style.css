@@ -451,3 +451,17 @@ textarea {
         grid-template-columns: 1fr;
     }
 }
+
+th.col-actions,
+td.col-actions {
+  text-align: right;
+  width: 170px;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+td.col-actions .btn {
+  display: inline-block;
+  margin: 0 0 0 6px;
+  vertical-align: middle;
+}
